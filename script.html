@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magical Christmas Sparkles</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Background Styling */
+    body {
+      background: url('https://images.unsplash.com/photo-1608889176097-dffba7f2973c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    /* Sparkle Effect */
+    .sparkle {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      animation: sparkle-fade 5s infinite alternate;
+    }
+
+    @keyframes sparkle-fade {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+    .sparkle div {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      animation: sparkle-animation 5s infinite linear;
+    }
+
+    @keyframes sparkle-animation {
+      0% {
+        transform: scale(0.5) translateY(0);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.5) translateY(-50px);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1) translateY(0);
+        opacity: 0;
+      }
+    }
+
+    /* Snowflake Styling */
+    .snowflake {
+      position: fixed;
+      top: -50px;
+      color: white;
+      font-size: 1.5rem;
+      pointer-events: none;
+      animation: snowflake-fall 10s linear infinite, snowflake-sideways 3s ease-in-out infinite;
+    }
+
+    @keyframes snowflake-fall {
+      0% {
+        transform: translateY(-50px);
+      }
+      100% {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes snowflake-sideways {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+    }
+
+    /* Sparkling Text Animation */
+    .sparkle-text {
+      animation: sparkle-text 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes sparkle-text {
+      0% {
+        text-shadow: 0 0 10px #ffffff, 0 0 20px #ff0000, 0 0 30px #ff0000;
+      }
+      100% {
+        text-shadow: 0 0 20px #ffffff, 0 0 40px #00ff00, 0 0 60px #00ff00;
+      }
+    }
+
+    /* Glowing Crosses */
+    .cross-sign {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      animation: twinkle 2s infinite alternate;
+    }
+
+    .cross-sign::before,
+    .cross-sign::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: red;
+    }
+
+    .cross-sign::before {
+      width: 100%;
+      height: 20%;
+    }
+
+    .cross-sign::after {
+      width: 20%;
+      height: 100%;
+    }
+
+    @keyframes twinkle {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 1;
+      }
+    }
+
+    /* Adjust Sparkle Density */
+    .sparkle div:nth-child(odd) {
+      animation-duration: 4s;
+    }
+
+    .sparkle div:nth-child(even) {
+      animation-duration: 6s;
+    }
+  </style>
+</head>
+<body>
+  <!-- Content Section -->
+  <div class="text-center relative z-10 mt-20">
+    <h1 class="text-6xl font-bold text-white mb-4 sparkle-text">Merry Christmas! 🎄✨</h1>
+    <p class="text-lg text-white opacity-90 mb-8">A magical sparkle-filled holiday experience!</p>
+  </div>
+
+  <!-- Snowflakes -->
+  <div class="snowflake" style="left: 10%;">❄️</div>
+  <div class="snowflake" style="left: 30%;">❅</div>
+  <div class="snowflake" style="left: 50%;">❆</div>
+  <div class="snowflake" style="left: 70%;">❄️</div>
+  <div class="snowflake" style="left: 90%;">❅</div>
+
+  <!-- Sparkles -->
+  <div class="sparkle">
+    <!-- Random sparkles generated -->
+    <div style="top: 10%; left: 15%;"></div>
+    <div style="top: 20%; left: 25%;"></div>
+    <div style="top: 50%; left: 50%;"></div>
+    <div style="top: 60%; left: 40%;"></div>
+    <div style="top: 80%; left: 70%;"></div>
+    <div style="top: 30%; left: 60%;"></div>
+    <div style="top: 50%; left: 80%;"></div>
+    <div style="top: 70%; left: 20%;"></div>
+    <div style="top: 90%; left: 35%;"></div>
+  </div>
+
+  <!-- Glowing Cross Signs -->
+  <div class="cross-sign" style="top: 40%; left: 30%;"></div>
+  <div class="cross-sign" style="top: 50%; left: 50%;"></div>
+  <div class="cross-sign" style="top: 70%; left: 70%;"></div>
+</body>
+</html>
+
